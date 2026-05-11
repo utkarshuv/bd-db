@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oat UI — POC</title>
+  <link rel="stylesheet" href="https://unpkg.com/@knadh/oat/oat.min.css" />
+  <script src="https://unpkg.com/@knadh/oat/oat.min.js" defer></script>
+  <style>
+    body { max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem; }
+    section { margin-bottom: 3rem; }
+    section h2 { border-bottom: 2px solid var(--color-border, #e2e8f0); padding-bottom: .5rem; margin-bottom: 1.5rem; }
+    .demo-row { display: flex; flex-wrap: wrap; gap: .75rem; align-items: center; margin-bottom: 1rem; }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ───────────────────────────────────────────────── -->
+  <nav>
+    <strong>🌾 Oat UI POC</strong>
+    <a href="#typography">Typography</a>
+    <a href="#buttons">Buttons</a>
+    <a href="#alerts">Alerts</a>
+    <a href="#badges">Badges</a>
+    <a href="#cards">Cards</a>
+    <a href="#forms">Forms</a>
+    <a href="#table">Table</a>
+    <a href="#accordion">Accordion</a>
+    <a href="#dialog">Dialog</a>
+    <a href="#tabs">Tabs</a>
+    <a href="#toast">Toast</a>
+    <a href="#progress">Progress</a>
+    <a href="#utils">Utils</a>
+  </nav>
+
+  <header style="margin: 2.5rem 0 3rem;">
+    <h1>Oat UI — Component POC</h1>
+    <p>A hands-on playground for every component in <a href="https://oat.ink" target="_blank">oat.ink</a>.
+       Zero dependencies · ~6 KB CSS · 2.2 KB JS (gzipped).</p>
+  </header>
+
+  <!-- ── TYPOGRAPHY ───────────────────────────────────────── -->
+  <section id="typography">
+    <h2>Typography</h2>
+    <h1>Heading 1</h1>
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h3>
+    <h4>Heading 4</h4>
+    <h5>Heading 5</h5>
+    <h6>Heading 6</h6>
+    <p>Regular paragraph with <strong>bold</strong>, <em>italic</em>, <u>underline</u>, <code>inline code</code>, and a <a href="#">link</a>.</p>
+    <blockquote>Oat styles semantic HTML elements by default. No classes needed for basic styling.</blockquote>
+    <pre><code>const greeting = "Hello, Oat!";\nconsole.log(greeting);</code></pre>
+    <p><small>Small text for captions or footnotes.</small></p>
+    <hr />
+  </section>
+
+  <!-- ── BUTTONS ───────────────────────────────────────────── -->
+  <section id="buttons">
+    <h2>Buttons</h2>
+    <div class="demo-row">
+      <button>Default</button>
+      <button data-variant="primary">Primary</button>
+      <button data-variant="secondary">Secondary</button>
+      <button data-variant="danger">Danger</button>
+      <button data-variant="ghost">Ghost</button>
+      <button disabled>Disabled</button>
+    </div>
+    <div class="demo-row">
+      <button data-size="sm">Small</button>
+      <button>Medium</button>
+      <button data-size="lg">Large</button>
+    </div>
+    <div class="demo-row">
+      <button data-variant="primary" data-loading>Loading…</button>
+    </div>
+  </section>
+
+  <!-- ── ALERTS ────────────────────────────────────────────── -->
+  <section id="alerts">
+    <h2>Alerts</h2>
+    <div role="alert">This is a default alert.</div>
+    <div role="alert" data-variant="success">Success! Your changes have been saved.</div>
+    <div role="alert" data-variant="warning">Warning: Please review before continuing.</div>
+    <div role="alert" data-variant="danger">Error: Something went wrong.</div>
+    <div role="alert" data-variant="info">Info: New version available.</div>
+  </section>
+
+  <!-- ── BADGES ────────────────────────────────────────────── -->
+  <section id="badges">
+    <h2>Badges</h2>
+    <div class="demo-row">
+      <span data-badge>Default</span>
+      <span data-badge="success">Success</span>
+      <span data-badge="warning">Warning</span>
+      <span data-badge="danger">Danger</span>
+      <span data-badge="info">Info</span>
+    </div>
+  </section>
+
+  <!-- ── CARDS ─────────────────────────────────────────────── -->
+  <section id="cards">
+    <h2>Cards</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;">
+
+      <article>
+        <header><strong>Basic Card</strong></header>
+        <p>This is a plain card using a semantic <code>&lt;article&gt;</code> element.</p>
+        <footer><button data-size="sm">Learn more</button></footer>
+      </article>
+
+      <article data-variant="outlined">
+        <header><strong>Outlined Card</strong></header>
+        <p>An outlined variant — great for secondary content areas.</p>
+        <footer><button data-size="sm" data-variant="ghost">Details</button></footer>
+      </article>
+
+      <article>
+        <header><strong>Status</strong> <span data-badge="success" style="float:right">Active</span></header>
+        <p>Cards can contain any components including badges, buttons, or forms.</p>
+        <meter value="0.7" min="0" max="1">70%</meter>
+        <footer style="margin-top:.5rem">
+          <button data-size="sm" data-variant="primary">View</button>
+          <button data-size="sm" data-variant="danger">Delete</button>
+        </footer>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ── FORMS ─────────────────────────────────────────────── -->
+  <section id="forms">
+    <h2>Forms</h2>
+    <form style="max-width:480px" onsubmit="return false">
+      <label>
+        Full name
+        <input type="text" placeholder="Jane Doe" />
+      </label>
+
+      <label>
+        Email
+        <input type="email" placeholder="jane@example.com" />
+      </label>
+
+      <label>
+        Password
+        <input type="password" placeholder="••••••••" />
+      </label>
+
+      <label>
+        Role
+        <select>
+          <option>— Select —</option>
+          <option>Admin</option>
+          <option>Editor</option>
+          <option>Viewer</option>
+        </select>
+      </label>
+
+      <label>
+        Notes
+        <textarea rows="3" placeholder="Anything to add?"></textarea>
+      </label>
+
+      <label>
+        Volume
+        <input type="range" min="0" max="100" value="40" />
+      </label>
+
+      <label><input type="checkbox" /> Accept terms &amp; conditions</label>
+
+      <fieldset>
+        <legend>Preferred contact</legend>
+        <label><input type="radio" name="contact" value="email" /> Email</label>
+        <label><input type="radio" name="contact" value="phone" /> Phone</label>
+        <label><input type="radio" name="contact" value="none" checked /> None</label>
+      </fieldset>
+
+      <label>
+        Profile picture
+        <input type="file" accept="image/*" />
+      </label>
+
+      <div class="demo-row" style="margin-top:1rem">
+        <button type="submit" data-variant="primary">Submit</button>
+        <button type="reset">Reset</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- ── TABLE ─────────────────────────────────────────────── -->
+  <section id="table">
+    <h2>Table</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Role</th>
+          <th>Status</th>
+          <th>Joined</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Alice Martin</td>
+          <td>Admin</td>
+          <td><span data-badge="success">Active</span></td>
+          <td>2024-01-15</td>
+        </tr>
+        <tr>
+          <td>Bob Chen</td>
+          <td>Editor</td>
+          <td><span data-badge="warning">Pending</span></td>
+          <td>2024-03-08</td>
+        </tr>
+        <tr>
+          <td>Carol Roy</td>
+          <td>Viewer</td>
+          <td><span data-badge="danger">Suspended</span></td>
+          <td>2023-11-22</td>
+        </tr>
+        <tr>
+          <td>Dave Singh</td>
+          <td>Editor</td>
+          <td><span data-badge="success">Active</span></td>
+          <td>2025-02-01</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ── ACCORDION ─────────────────────────────────────────── -->
+  <section id="accordion">
+    <h2>Accordion</h2>
+    <details open>
+      <summary>What is Oat UI?</summary>
+      <p>Oat is a lightweight, zero-dependency UI framework that styles semantic HTML automatically.
+         No class soup required.</p>
+    </details>
+    <details>
+      <summary>How big is it?</summary>
+      <p>Around <strong>6 KB CSS</strong> and <strong>2.2 KB JS</strong> gzipped — tiny enough to inline.</p>
+    </details>
+    <details>
+      <summary>Does it work with frameworks?</summary>
+      <p>Yes — Oat is framework-agnostic. Drop in the CDN links or install via npm and import the files.</p>
+    </details>
+  </section>
+
+  <!-- ── DIALOG ────────────────────────────────────────────── -->
+  <section id="dialog">
+    <h2>Dialog</h2>
+    <button data-variant="primary" onclick="document.getElementById('demo-dialog').showModal()">
+      Open Dialog
+    </button>
+
+    <dialog id="demo-dialog">
+      <header>
+        <strong>Confirm action</strong>
+        <button data-variant="ghost" data-size="sm"
+                onclick="document.getElementById('demo-dialog').close()"
+                aria-label="Close">✕</button>
+      </header>
+      <p>Are you sure you want to delete this item? This cannot be undone.</p>
+      <footer>
+        <button data-variant="danger"
+                onclick="document.getElementById('demo-dialog').close()">Delete</button>
+        <button onclick="document.getElementById('demo-dialog').close()">Cancel</button>
+      </footer>
+    </dialog>
+  </section>
+
+  <!-- ── TABS ──────────────────────────────────────────────── -->
+  <section id="tabs">
+    <h2>Tabs</h2>
+    <ot-tabs>
+      <ot-tab label="Overview">
+        <p><strong>Overview tab</strong> — introduce the feature or product here.</p>
+        <p>Tabs are a native Web Component included in Oat's JS bundle.</p>
+      </ot-tab>
+      <ot-tab label="Details">
+        <p><strong>Details tab</strong> — dig deeper into specifications.</p>
+        <ul>
+          <li>Zero external dependencies</li>
+          <li>Accessible keyboard navigation</li>
+          <li>ARIA attributes built-in</li>
+        </ul>
+      </ot-tab>
+      <ot-tab label="Reviews">
+        <p><strong>Reviews tab</strong> — show user feedback.</p>
+        <blockquote>"Oat is refreshingly small and opinionated in the right ways."</blockquote>
+      </ot-tab>
+    </ot-tabs>
+  </section>
+
+  <!-- ── TOAST ─────────────────────────────────────────────── -->
+  <section id="toast">
+    <h2>Toast Notifications</h2>
+    <div class="demo-row">
+      <button onclick="ot.toast('Default toast message')">Default</button>
+      <button data-variant="primary"
+              onclick="ot.toast('Saved successfully!', {variant:'success'})">Success</button>
+      <button data-variant="secondary"
+              onclick="ot.toast('Heads up — check this out.', {variant:'warning'})">Warning</button>
+      <button data-variant="danger"
+              onclick="ot.toast('Something went wrong.', {variant:'danger'})">Error</button>
+      <button onclick="ot.toast('FYI: new update available.', {variant:'info'})">Info</button>
+    </div>
+  </section>
+
+  <!-- ── PROGRESS / SPINNER / SKELETON ─────────────────────── -->
+  <section id="progress">
+    <h2>Progress, Spinner &amp; Skeleton</h2>
+
+    <p><strong>Progress bars</strong></p>
+    <progress value="30" max="100"></progress>
+    <progress value="65" max="100"></progress>
+    <progress value="90" max="100"></progress>
+
+    <p style="margin-top:1.5rem"><strong>Indeterminate</strong></p>
+    <progress></progress>
+
+    <p style="margin-top:1.5rem"><strong>Spinner</strong></p>
+    <div class="demo-row">
+      <span data-spinner></span>
+      <span data-spinner data-size="lg"></span>
+      <span>Loading content…</span>
+    </div>
+
+    <p style="margin-top:1.5rem"><strong>Skeleton</strong></p>
+    <div data-skeleton style="height:1.2rem;width:60%;margin-bottom:.5rem"></div>
+    <div data-skeleton style="height:1.2rem;width:80%;margin-bottom:.5rem"></div>
+    <div data-skeleton style="height:1.2rem;width:50%"></div>
+  </section>
+
+  <!-- ── UTILITIES ─────────────────────────────────────────── -->
+  <section id="utils">
+    <h2>Utilities — hstack &amp; vstack</h2>
+
+    <p><strong>hstack</strong> (horizontal flex row with gap)</p>
+    <div class="hstack" style="margin-bottom:1rem">
+      <button>One</button>
+      <button>Two</button>
+      <button>Three</button>
+    </div>
+
+    <p><strong>vstack</strong> (vertical flex column with gap)</p>
+    <div class="vstack" style="max-width:200px">
+      <button data-variant="primary">First</button>
+      <button>Second</button>
+      <button data-variant="ghost">Third</button>
+    </div>
+
+    <p style="margin-top:1.5rem"><strong>Tooltip</strong></p>
+    <div class="demo-row">
+      <button data-tooltip="Saved to clipboard!">Hover me</button>
+      <a href="#" data-tooltip="Opens in new tab">Link tooltip</a>
+    </div>
+
+    <p style="margin-top:1.5rem"><strong>Avatars</strong></p>
+    <div class="demo-row">
+      <span data-avatar>AB</span>
+      <span data-avatar>CD</span>
+      <span data-avatar>EF</span>
+    </div>
+
+    <p style="margin-top:1.5rem"><strong>Breadcrumb</strong></p>
+    <nav aria-label="breadcrumb">
+      <ol>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Products</a></li>
+        <li>Detail</li>
+      </ol>
+    </nav>
+
+    <p style="margin-top:1.5rem"><strong>Pagination</strong></p>
+    <nav aria-label="pagination">
+      <ul>
+        <li><a href="#" aria-label="Previous">‹</a></li>
+        <li><a href="#">1</a></li>
+        <li><a href="#" aria-current="page">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#" aria-label="Next">›</a></li>
+      </ul>
+    </nav>
+
+    <p style="margin-top:1.5rem"><strong>Switch</strong></p>
+    <div class="demo-row">
+      <label><input type="checkbox" role="switch" /> Notifications</label>
+      <label><input type="checkbox" role="switch" checked /> Dark mode</label>
+      <label><input type="checkbox" role="switch" disabled /> Disabled</label>
+    </div>
+  </section>
+
+  <footer style="margin-top:4rem;padding-top:1rem;border-top:1px solid var(--color-border,#e2e8f0);text-align:center">
+    <small>Built with <a href="https://oat.ink" target="_blank">Oat UI</a> — POC playground</small>
+  </footer>
+
+</body>
+</html>

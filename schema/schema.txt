@@ -1,0 +1,13 @@
+users:
+id:int:pk:auto
+username:string:unique:required
+password:string:required
+age:int:nullable
+role:string:default=user
+createdAt:datetime:default=now
+
+posts:
+id:int:pk:auto
+title:string:required
+body:string
+userId:int:fk=users.id

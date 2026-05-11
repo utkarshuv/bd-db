@@ -1,0 +1,16 @@
+{
+  "name": "json-db",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "test": "node tests/schemaParser.test.js && node tests/validator.test.js && node tests/queryEngine.test.js && node tests/database.test.js && node tests/integration.test.js",
+    "example": "node examples/usage.js"
+  }
+}
