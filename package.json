@@ -1,11 +1,16 @@
 {
-  "name": "json-db",
+  "name": "@utkarshuv/bd-db",
   "version": "1.0.0",
   "type": "module",
   "main": "index.js",
   "exports": {
     ".": "./index.js"
   },
+  "files": [
+    "src",
+    "index.js",
+    "README.md"
+  ],
   "engines": {
     "node": ">=18.0.0"
   },
