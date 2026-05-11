@@ -18,7 +18,9 @@ A lightweight, SQL-inspired database engine for Node.js that uses JSON files as 
 
 ## Installation
 
-No npm install needed. Clone or copy the project, then:
+```bash
+npm i @utkarshuv/bd-db
+```
 
 ```bash
 node --version  # requires Node.js 18+
