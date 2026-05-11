@@ -7,7 +7,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const DB_DIR = join(__dirname, '..', 'database');
 const SCHEMA_PATH = join(__dirname, '..', 'schema', 'schema.txt');
 
-console.log('\n=== JSON-DB Usage Example ===\n');
+console.log('\n=== BD-DB Usage Example ===\n');
 
 const db = new Database({ schemaPath: SCHEMA_PATH, databaseDir: DB_DIR });
 await db.init();

@@ -6,7 +6,7 @@ import { rm } from 'fs/promises';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const SCHEMA_PATH = join(__dirname, '..', 'schema', 'schema.txt');
-const DB_DIR = join('/tmp', `json-db-integration-${Date.now()}`);
+const DB_DIR = join('/tmp', `bd-db-integration-${Date.now()}`);
 
 let passed = 0;
 let failed = 0;

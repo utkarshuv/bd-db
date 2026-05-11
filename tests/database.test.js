@@ -7,7 +7,7 @@ import { existsSync } from 'fs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const SCHEMA_PATH = join(__dirname, '..', 'schema', 'schema.txt');
-const DB_DIR = join('/tmp', `json-db-test-${Date.now()}`);
+const DB_DIR = join('/tmp', `bd-db-test-${Date.now()}`);
 
 let passed = 0;
 let failed = 0;

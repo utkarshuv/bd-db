@@ -1,4 +1,4 @@
-# json-db
+# bd-db
 
 A lightweight, SQL-inspired database engine for Node.js that uses JSON files as tables. No external dependencies — pure Node.js with filesystem-based persistence.
 
